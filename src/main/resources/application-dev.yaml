@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    username: root
+    password: absd11234
+    url: jdbc:mysql://120.55.40.11/sec_kill
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jackson:
+      time-zone: GMT+8
+      date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    host: 122.9.68.78
+    port: 6379
+  cache:
+    type: caffeine
+    cache-names: SECKILL
+  redisson:
+    database: 1
+    address: redis://122.9.68.78:6379
+    connectionPoolSize: 8
+    connectionMinimumIdleSize: 3
+    subscriptionConnectionPoolSize: 6
+    subscriptionConnectionMinimumIdleSize: 1
+
+server:
+  port: 9090
+rocketmq:
+  name-server: 122.9.68.78:9876
+  producer:
+    group: "sec_kill_producer"
